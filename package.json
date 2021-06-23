@@ -1,0 +1,25 @@
+{
+  "name": "data-structure-and-algorithms",
+  "version": "1.0.0",
+  "description": "Repository for my learning of data structures and algorithms",
+  "main": ".",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarvagya2545/data-structures-and-algorithms.git"
+  },
+  "keywords": [
+    "Data",
+    "Structures",
+    "Algorithms",
+    "Coding"
+  ],
+  "author": "Sarvagya Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarvagya2545/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/sarvagya2545/data-structures-and-algorithms#readme"
+}
