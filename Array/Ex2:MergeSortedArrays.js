@@ -1,8 +1,12 @@
 console.log(
-    mergeSortedArrays([0,3,4,31], [4,6,30])
+    mergeSortedArrays([], [4,6,30])
 )
 
 function mergeSortedArrays(arr1, arr2) {
+    // Makes solution O(1) instead of O(n) in case of 1 array being empty
+    if(arr1.length === 0) return arr2;
+    if(arr2.length === 0) return arr1;
+
     let arr3 = [];
     let i = 0,j = 0;
 
