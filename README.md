@@ -3,16 +3,16 @@
 ## Topics
 
 ### Algorithmic Complexity Analysis
-- [ ] Big O Notation
-- [ ] Time Complexity
-- [ ] Space Complexity
+- [X] Big O Notation
+- [X] Time Complexity
+- [X] Space Complexity
 
 ### Data Structures
-- [ ] Arrays
-- [ ] Hash Tables
+- [X] Arrays
+- [X] Hash Tables
 - [ ] Stacks
 - [ ] Queues
-- [ ] Linked Lists
+- [X] Linked Lists
 - [ ] Trees
 - [ ] Graphs
 
