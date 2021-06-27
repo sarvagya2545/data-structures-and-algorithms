@@ -84,6 +84,45 @@ class DoublyLinkedList {
         this.length--;
     }
 
+    reverse() {
+        // reverse a linked list.
+        // 1 -> 2 -> 3 -> ....
+        // curr succ
+        // null <- 1 <- 2  <-  3    4 -> 5 -> 6 -> null
+        //                         temp succ 
+        //                    pre  curr    
+        // curr.next = pre;
+        // temp = succ;
+        // succ = succ.next;
+        // pre = curr;
+        // curr = temp;
+        // 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> null
+
+        // null <- 1 <- 2 <- 3 <- 4 <- 5(pre)  null(curr, succ)
+
+        // 3 pointer approach
+        let predecessor = null;
+        let current = this.head;
+        let successor = current.next;
+
+        this.tail = this.head;
+
+        while(current != null) {
+
+            // changing the ptr
+            current.next = predecessor;
+            if(predecessor != null) predecessor.prev = current;
+
+            // shifting the 3 pointers
+            predecessor = current;
+            current = successor;
+            if(successor != null) successor = successor.next;
+        }
+
+        predecessor.prev = null;
+        this.head = predecessor;
+    }
+
     traverseToIndex(index) {
         if(index > this.length / 2) {
             // traverse from the tail ptr
@@ -132,5 +171,8 @@ myDoublyLinkedList
     .prepend(420)
     .insert(0, 7)
     .remove(1)
-    
+
+// before 7, 0, 3, 8, 1, 12, 8
+myDoublyLinkedList.reverse(); 
+ 
 console.log(myDoublyLinkedList.toString());

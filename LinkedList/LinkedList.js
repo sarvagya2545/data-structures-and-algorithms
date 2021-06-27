@@ -90,6 +90,43 @@ class LinkedList {
         predecessor.next = successor;
     }
 
+    reverse() {
+        // reverse a linked list.
+        // 1 -> 2 -> 3 -> ....
+        // curr succ
+        // null <- 1 <- 2  <-  3    4 -> 5 -> 6 -> null
+        //                         temp succ 
+        //                    pre  curr    
+        // curr.next = pre;
+        // temp = succ;
+        // succ = succ.next;
+        // pre = curr;
+        // curr = temp;
+        // 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> null
+
+        // null <- 1 <- 2 <- 3 <- 4 <- 5(pre)  null(curr, succ)
+
+        // 3 pointer approach
+        let predecessor = null;
+        let current = this.head;
+        let successor = current.next;
+
+        this.tail = this.head;
+
+        while(current != null) {
+
+            // changing the ptr
+            current.next = predecessor;
+
+            // shifting the 3 pointers
+            predecessor = current;
+            current = successor;
+            if(successor != null) successor = successor.next;
+        }
+
+        this.head = predecessor;
+    }
+
     traverseToIndex(index) {
         // it -> iterator
         let it = this.head;
@@ -137,8 +174,15 @@ myLinkedList.insert(7, 5); // 10 --> 1 --> 2 --> 3 --> 4 --> 7 --> null
 // remove at INDEX and not remove the element
 myLinkedList.remove(3); // 10 --> 1 --> 2 --> 4 --> 7 --> null
 
+myLinkedList.reverse();
 // BAD WAY OF PRINTING
 // console.log(JSON.stringify(myLinkedList, undefined, 2));
+
+let it = myLinkedList.head;
+while(it != null) {
+    console.log(it.value);
+    it = it.next;
+}
 
 // GOOD WAY FOR PRINTING
 myLinkedList.printList();
