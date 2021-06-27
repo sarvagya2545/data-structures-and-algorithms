@@ -100,6 +100,8 @@ class DoublyLinkedList {
 
         // null <- 1 <- 2 <- 3 <- 4 <- 5(pre)  null(curr, succ)
 
+        if(this.length === 1) return this.head;
+
         // 3 pointer approach
         let predecessor = null;
         let current = this.head;
@@ -121,6 +123,8 @@ class DoublyLinkedList {
 
         predecessor.prev = null;
         this.head = predecessor;
+
+        return this.head;
     }
 
     traverseToIndex(index) {
@@ -174,5 +178,5 @@ myDoublyLinkedList
 
 // before 7, 0, 3, 8, 1, 12, 8
 myDoublyLinkedList.reverse(); 
- 
+
 console.log(myDoublyLinkedList.toString());

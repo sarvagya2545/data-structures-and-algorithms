@@ -106,6 +106,8 @@ class LinkedList {
 
         // null <- 1 <- 2 <- 3 <- 4 <- 5(pre)  null(curr, succ)
 
+        if(this.length === 1) return this.head;
+
         // 3 pointer approach
         let predecessor = null;
         let current = this.head;
@@ -125,6 +127,7 @@ class LinkedList {
         }
 
         this.head = predecessor;
+        return this.head;
     }
 
     traverseToIndex(index) {
