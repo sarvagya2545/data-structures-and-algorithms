@@ -63,7 +63,5 @@ myGraph.addEdge(4,3);
 
 myGraph.removeEdge(4,3);
 
-myGraph.showConnections();
-console.log('-----')
 myGraph.removeVertex(4);
 myGraph.showConnections();
