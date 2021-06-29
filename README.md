@@ -13,7 +13,7 @@
 - [X] Stacks
 - [X] Queues
 - [X] Linked Lists
-- [ ] Trees
+- [X] Trees
 - [ ] Graphs
 
 ### Algorithms
