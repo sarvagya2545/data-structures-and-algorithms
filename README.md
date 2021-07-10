@@ -23,6 +23,6 @@
   - [ ] *Merge Sort*
   - [ ] *Quicksort*
 - [ ] Searching
-  - [ ] Linear Search
-  - [ ] Binary Search
-  - [ ] BFS & DFS
+  - [X] Linear Search
+  - [X] Binary Search
+  - [X] BFS & DFS

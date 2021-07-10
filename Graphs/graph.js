@@ -46,6 +46,46 @@ class Graph {
         })
         this.adjacentList.delete(node);
     }
+
+    dfs(cb) {
+        const visited = [];
+        const stack = [];
+        // get the first node in the adj list.
+        let currentNode = Array.from(this.adjacentList.keys())[0];
+
+        stack.push(currentNode);
+
+        while(stack.length > 0) {
+            currentNode = stack.pop();
+            cb(currentNode, this.adjacentList.get(currentNode));
+            visited.push(currentNode);
+            this.adjacentList.get(currentNode)
+                .filter(node => !visited.includes(node) && !stack.includes(node))
+                .forEach(node => {
+                    stack.push(node);
+                });
+        }
+
+        return visited;
+    }
+
+    bfs(cb) {
+        let visited = [];
+        let queue = [];
+        let currentNode = Array.from(this.adjacentList.keys())[0];
+        queue.push(currentNode);
+
+        while(queue.length > 0) {
+            currentNode = queue.shift(); // dequeue
+            cb(currentNode, this.adjacentList.get(currentNode));
+            visited.push(currentNode);
+            this.adjacentList.get(currentNode)
+                .filter(node => !visited.includes(node) && !queue.includes(node))
+                .forEach(node => queue.push(node)) // enqueue
+        }
+
+        return visited;
+    }
 }
 
 const myGraph = new Graph();
@@ -61,7 +101,19 @@ myGraph.addEdge(1,4);
 myGraph.addEdge(2,4);
 myGraph.addEdge(4,3);
 
-myGraph.removeEdge(4,3);
+// myGraph.removeEdge(4,3);
 
-myGraph.removeVertex(4);
+// myGraph.removeVertex(4);
 myGraph.showConnections();
+console.log(
+    'bfs',
+    myGraph.bfs((node, value) => {
+        // console.log(node, value)
+    })
+);
+console.log(
+    'dfs',
+    myGraph.dfs((node, value) => {
+        // console.log(node, value)
+    })
+);

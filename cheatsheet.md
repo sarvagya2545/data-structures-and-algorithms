@@ -2,13 +2,13 @@
 
 ## From Andrei Neagoie's Master The Coding Interview: Data Structures + Algorithms
 
-The 3 pillars of good code:
+### The 3 pillars of good code:
 
 1. Readable
 2. Time Complexity 
 3. Space Complexity
    
-### What skills interviewer is looking for:
+## What skills interviewer is looking for:
 
 Analytic Skills - How can you think through problems and analyze things?
 
@@ -18,7 +18,7 @@ Technical knowledge - Do you know the fundamentals of the job you're applying fo
 
 Communication skills: Does your personality match the companies’ culture?
 
-### Step By Step through a problem:
+## Step By Step through a problem:
 
 1. When the interviewer says the question, write down the key points at the top (i.e. sorted array). Make sure you have all the details. Show how organized you are.
 2. Make sure you double check: What are the inputs? What are the outputs?
@@ -38,7 +38,7 @@ etc.. What is the main goal?
 14. Finally talk to the interviewer where you would improve the code. Does it work? Are there different approaches? Is it readable? What would you google to improve? How can performance be improved? Possibly: Ask the interviewer what was the most interesting solution you have seen to this problem
 15. If your interviewer is happy with the solution, the interview usually ends here. It is also common that the interviewer asks you extension questions, such as how you would handle the problem if the whole input is too large to fit into memory, or if the input arrives as a stream. This is a common follow-up question at Google, where they care a lot about scale. The answer is usually a divide-and-conquer approach — perform distributed processing of the data and only read certain chunks of the input from disk into memory, write the output back to disk and combine them later.
  
-### Good code checklist:
+## Good code checklist:
 
 - [ ] It works
 - [ ] Good use of data structures
